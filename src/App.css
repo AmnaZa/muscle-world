@@ -1,14 +1,38 @@
-header, main, footer {
+/* App.css */
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #7c52a0;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #9d6bc6;
+}
+
+/* Navbar */
+header {
+  background-color: #7c52a0;
+  color: #fff;
   padding: 1rem 2rem;
 }
 
 h1 {
   color: tomato;
+  font-size: 1.5rem;
 }
 
 img {
-  width: 20%;
-  justify-content: left;
+  width: 80px; /* Adjust the width as needed */
+  height: auto;
+  display: block;
+  margin-right: 1rem; /* Added to create some space between logo and text */
 }
 
 nav ul {
@@ -16,15 +40,36 @@ nav ul {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
+  align-items: center; /* Added to vertically center the logo */
 }
 
-nav ul a {
-  color: rgb(79, 23, 23);
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+nav ul li a:hover {
+  background-color: #9d6bc6;
+  border-radius: 5px;
+}
+
+/* Home and Exercises Pages */
+.container {
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 1rem 2rem;
+}
+
+/* Footer */
+footer {
+  background-color: #7c52a0;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 2rem;
 }
 
 footer nav ul {
-  padding: 0;
-  list-style-type: none;
   display: flex;
   justify-content: space-between;
 }

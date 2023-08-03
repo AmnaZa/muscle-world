@@ -1,22 +1,27 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Stack } from '@mui/material'
+// Navbar.js
+import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../Images/logo.png';
 
-import logo from '../Images/logo.png'
-
-const Navbar = () => {
+function Navbar() {
   return (
-    <Stack direction='row' justifyContent='space-around' sx={{ gap: { sm: '122px', xs: '40px' }, mt: { sm: '32px', xs: '20px' }, justifyContent: 'none' }} px='20px' >
-      <Link>
-        <img src={logo} alt="logo" style={{ width: '200px', height:'200px' }}/>
+    <header>
+      <Link to="/">
+        <img src={logo} alt="Logo" />
       </Link>
-
-      <Stack direction='row' gap='40px' fontSize='24px' alignItems='flex-end'>
-        <Link to='/' style={{ textDecoration:'none', color:'#3A1212', borderBottom:'3px solid #5c5b5b' }}>Home</Link>
-        <a href='#exercises' style={{ textDecoration:'none', color:'#5c5b5b' }}>Exercises</a>
-      </Stack>
-    </Stack>
-  )
+      <h1>Muscles World</h1>
+      <h2>Make yourself proud</h2>
+      <nav aria-label="Main Navigation" role="navigation">
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/exercise">Exercises</Link></li>
+          <li><Link to="/nutrients">Nutrients</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/stocks">Contact Us</Link></li>
+        </ul>
+      </nav>
+    </header>
+  );
 }
 
-export default Navbar
+export default Navbar;

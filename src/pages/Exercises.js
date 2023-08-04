@@ -7,25 +7,28 @@ function Exercises() {
   const [exercises, setExercises] = useState([]);
 
   useEffect(() => {
-    const apiKey = 'FJFpRD4M+a4ZukKbzMQW+A==EVZhMv1fEZTMuJ7V'; 
-
-    fetchData(symbol, apiKey)
-      .then((body) => {
-        const data = JSON.parse(body);
+    const muscle = 'biceps';
+    
+    fetchData(muscle, 'FJFpRD4M+a4ZukKbzMQW+A==EVZhMv1fEZTMuJ7V')
+      .then((data) => {
         setExercises(data);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
-  }, [symbol]);
+  }, []);
 
   return (
     <div>
-      {/* Render your exercises page content */}
-      {exercises.map((exercise) => (
-        <div key={exercise.id}>
+      {/* Render your home page content */}
+      {exercises.map((exercise, key) => (
+        <div key={key}>
           <h3>{exercise.name}</h3>
-          {/* Add other exercise details as needed */}
+          <div>Equipment: {exercise.equipment}</div>
+          <div>Instructions: {exercise.instructions}</div>
+          <div>Type: {exercise.type}</div>
+          <div>muscle: {exercise.muscle}</div>
+          <div>difficulty: {exercise.difficulty}</div>
         </div>
       ))}
     </div>

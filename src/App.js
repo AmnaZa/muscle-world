@@ -8,12 +8,17 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import GlobalStyles from './GlobalStyles'; // Import the global styles
+import { HeaderContainer } from './HeaderStyles'; 
 
 function App() {
   return (
     <div>
+      <GlobalStyles />
       <Router>
-        <Navbar />
+        <HeaderContainer>
+          <Navbar />
+        </HeaderContainer>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/exercise" element={<Exercises />} />

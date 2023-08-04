@@ -22,7 +22,11 @@ function Home() {
       {exercises.map((exercise) => (
         <div key={exercise.id}>
           <h3>{exercise.name}</h3>
-          {/* Add other exercise details as needed */}
+          <div>Equipment: {exercise.equipment}</div>
+          <div>Instructions: {exercise.instructions}</div>
+          <div>Type: {exercise.type}</div>
+          <div>muscle: {exercise.muscle}</div>
+          <div>difficulty: {exercise.difficulty}</div>
         </div>
       ))}
     </div>

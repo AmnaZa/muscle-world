@@ -1,17 +1,16 @@
-// fetchData.js
 const axios = require('axios');
 
-const fetchData = (muscle, apiKey) => {
-  return axios
-    .get(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`, {
-      headers: {
-        'FJFpRD4M+a4ZukKbzMQW+A==EVZhMv1fEZTMuJ7V': apiKey,
-      },
-    })
-    .then((response) => response.data)
-    .catch((error) => {
-      throw error;
-    });
+const fetchData = async (muscle, apiKey) => {
+  const url = 'https://api.api-ninjas.com/v1/exercises';
+  const params = { muscle };
+  const headers = { 'b448fdbe00msh58110be92031f1ep131198jsnd977eb5c41de': apiKey };
+
+  try {
+    const response = await axios.get(url, { params, headers });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
 module.exports = fetchData;

@@ -5,12 +5,10 @@ function Home() {
   const [exercises, setExercises] = useState([]);
 
   useEffect(() => {
-    const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
     const muscle = 'biceps';
     
-    fetchData(muscle, apiKey)
-      .then((body) => {
-        const data = JSON.parse(body);
+    fetchData(muscle)
+      .then((data) => {
         setExercises(data);
       })
       .catch((error) => {

@@ -7,7 +7,7 @@ function Home() {
   useEffect(() => {
     const muscle = 'biceps';
     
-    fetchData(muscle)
+    fetchData(muscle, 'FJFpRD4M+a4ZukKbzMQW+A==EVZhMv1fEZTMuJ7V')
       .then((data) => {
         setExercises(data);
       })

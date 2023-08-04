@@ -9,7 +9,7 @@ function Navbar() {
       <Link to="/">
         <img src={logo} alt="Logo" />
       </Link>
-      <h1>Muscles World</h1>
+      <h1>Fitness Hub</h1>
       <h2>Make yourself proud</h2>
       <nav aria-label="Main Navigation" role="navigation">
         <ul>
@@ -17,7 +17,7 @@ function Navbar() {
           <li><Link to="/exercise">Exercises</Link></li>
           <li><Link to="/nutrients">Nutrients</Link></li>
           <li><Link to="/about">About</Link></li>
-          <li><Link to="/stocks">Contact Us</Link></li>
+          <li><Link to="/contact">Contact Us</Link></li>
         </ul>
       </nav>
     </header>

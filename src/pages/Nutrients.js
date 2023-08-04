@@ -1,11 +1,17 @@
-
 import styled from 'styled-components';
+import nutrientsImage from '../Images/Nutrients.jpeg';
 
 const NutrientsContainer = styled.div`
   background-color: #f0f0f0;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 2rem;
+  position: relative;
+`;
+
+const NutrientsImage = styled.img`
+  width: 100%;
+  border-radius: 5px;
 `;
 
 const NutrientsTitle = styled.h1`
@@ -51,6 +57,7 @@ function Nutrients() {
         <NutrientsItem>Calcium: 500 mg</NutrientsItem>
         <NutrientBenefit>Almonds are a great source of healthy fats, protein, and vitamin E.</NutrientBenefit>
       </NutrientsList>
+      <NutrientsImage src={nutrientsImage} alt="Nutrients" /> {/* Add the image here */}
     </NutrientsContainer>
   );
 }

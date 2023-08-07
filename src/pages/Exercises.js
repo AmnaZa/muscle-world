@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'; // Import the 'useParams' hook
+import { useParams } from 'react-router-dom';
 import fetchData from '../Key/fetchData';
+import API_KEY from '../Key/key';
 
 function Exercises() {
-  const { symbol } = useParams(); // Use the 'useParams' hook to get the symbol from the URL
+  const { symbol } = useParams();
   const [exercises, setExercises] = useState([]);
 
   useEffect(() => {
     const muscle = 'biceps';
     
-    fetchData(muscle, 'FJFpRD4M+a4ZukKbzMQW+A==EVZhMv1fEZTMuJ7V')
+    fetchData(muscle, API_KEY) // Use the imported API_KEY variable
       .then((data) => {
         setExercises(data);
       })

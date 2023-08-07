@@ -9,38 +9,32 @@ function Exercises() {
   const [bicepsExercises, setBicepsExercises] = useState([]);
   const [tricepsExercises, setTricepsExercises] = useState([]);
   const [glutesExercises, setGlutesExercises] = useState([]);
+  const [abdominalsExercises, setAbdominalsExercises] = useState([]);
+  const [abductorsExercises, setAbductorsExercises] = useState([]);
+  const [adductorsExercises, setAdductorsExercises] = useState([]);
+  const [calvesExercises, setCalvesExercises] = useState([]);
+  const [chestExercises, setChestExercises] = useState([]);
+  const [forearmsExercises, setForearmsExercises] = useState([]);
 
   useEffect(() => {
-    const fetchBicepsData = async () => {
+    const fetchDataForMuscleGroup = async (muscleGroup, setterFunction) => {
       try {
-        const bicepsData = await fetchData('biceps', API_KEY);
-        setBicepsExercises(bicepsData);
+        const data = await fetchData(muscleGroup, API_KEY);
+        setterFunction(data);
       } catch (error) {
-        console.error('Error fetching biceps data:', error);
+        console.error(`Error fetching ${muscleGroup} data:`, error);
       }
     };
 
-    const fetchTricepsData = async () => {
-      try {
-        const tricepsData = await fetchData('triceps', API_KEY);
-        setTricepsExercises(tricepsData);
-      } catch (error) {
-        console.error('Error fetching triceps data:', error);
-      }
-    };
-
-    const fetchGlutesData = async () => {
-      try {
-        const glutesData = await fetchData('glutes', API_KEY);
-        setGlutesExercises(glutesData);
-      } catch (error) {
-        console.error('Error fetching glutes data:', error);
-      }
-    };
-
-    fetchBicepsData();
-    fetchTricepsData();
-    fetchGlutesData();
+    fetchDataForMuscleGroup('biceps', setBicepsExercises);
+    fetchDataForMuscleGroup('triceps', setTricepsExercises);
+    fetchDataForMuscleGroup('glutes', setGlutesExercises);
+    fetchDataForMuscleGroup('abdominals', setAbdominalsExercises);
+    fetchDataForMuscleGroup('abductors', setAbductorsExercises);
+    fetchDataForMuscleGroup('adductors', setAdductorsExercises);
+    fetchDataForMuscleGroup('calves', setCalvesExercises);
+    fetchDataForMuscleGroup('chest', setChestExercises);
+    fetchDataForMuscleGroup('forearms', setForearmsExercises);
   }, []);
 
   return (
@@ -53,6 +47,24 @@ function Exercises() {
 
       <h2>Glutes Exercises</h2>
       <ExerciseCardGrid exercises={glutesExercises} />
+
+      <h2>Abdominals Exercises</h2>
+      <ExerciseCardGrid exercises={abdominalsExercises} />
+
+      <h2>Abductors Exercises</h2>
+      <ExerciseCardGrid exercises={abductorsExercises} />
+
+      <h2>Adductors Exercises</h2>
+      <ExerciseCardGrid exercises={adductorsExercises} />
+
+      <h2>Calves Exercises</h2>
+      <ExerciseCardGrid exercises={calvesExercises} />
+
+      <h2>Chest Exercises</h2>
+      <ExerciseCardGrid exercises={chestExercises} />
+
+      <h2>Forearms Exercises</h2>
+      <ExerciseCardGrid exercises={forearmsExercises} />
     </div>
   );
 }

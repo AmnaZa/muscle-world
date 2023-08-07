@@ -174,3 +174,79 @@ ul {
 .container li {
   margin-bottom: 0.5rem;
 }
+
+
+/* ExerciseCard.css */
+.exercise-card {
+  background-color: #eeddf5;
+  color: #0b0b0b;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  cursor: pointer;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.exercise-name {
+  font-size: 1.5rem;
+  margin: 0;
+  padding-bottom: 10px;
+  transition: color 0.3s;
+  color: black;
+}
+
+.hide-name {
+  color: transparent;
+}
+
+.exercise-card.selected {
+  background-color: #8668a4;
+}
+
+.exercise-details {
+  margin-top: 10px;
+}
+
+.exercise-details p {
+  margin: 5px 0;
+}
+
+.close-btn {
+  background-color: #8668a4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.close-btn:hover {
+  background-color: #542683;
+}
+
+.exercise-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px; /* Adjust the gap value as needed */
+}
+
+.exercise-card-grid-container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* Set the container to cover the entire viewport height */
+}
+
+.exercise-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Scale the image to cover the entire container */
+  background-position: center; /* Center the image within the container */
+  z-index: -1; /* Move the image behind the content */
+}
